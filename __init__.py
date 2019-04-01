@@ -5,6 +5,7 @@ class CampoTest(MycroftSkill):
 
 
 	def __init__(self):
+		MycroftSkill.__init__(self)
 
 	#that all the requirement for the function
 	#the requirement are the .voc documents needed
@@ -14,7 +15,7 @@ class CampoTest(MycroftSkill):
 		#get the message which was says by the user
 		utterance = message.data.get['utterance']
 		#Mycroft will say the content of the error.dialog file.
-		self.speak_dialog('test.campo')
+		self.speak_dialog('campo')
 		#Mycroft will repeat exactly what was said.
 		self.speak_dialog(utterance)
 
