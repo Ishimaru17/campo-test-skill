@@ -11,7 +11,7 @@ class CampoSkill(MycroftSkill):
 	@intent_handler(IntentBuilder("CampoIntent").require("campo").build())
 	def handler_campo__intent(self, message):
 		#get the message which was says by the user
-		utterance = message.data.get['utterance']
+		utterance = message.data.get('utterance')
 		#Mycroft will say the content of the error.dialog file.
 		#Mycroft will repeat exactly what was said.
 		self.speak_dialog(utterance)
