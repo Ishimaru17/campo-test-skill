@@ -4,9 +4,6 @@ from mycroft import MycroftSkill, intent_handler
 class CampoTest(MycroftSkill):
 
 
-	def __init__(self):
-		MycroftSkill.__init__(self)
-
 	#that all the requirement for the function
 	#the requirement are the .voc documents needed
 	#if something is optional, there is the .optional() option
