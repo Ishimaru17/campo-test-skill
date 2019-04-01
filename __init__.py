@@ -13,7 +13,6 @@ class CampoTest(MycroftSkill):
 		#get the message which was says by the user
 		utterance = message.data.get['utterance']
 		#Mycroft will say the content of the error.dialog file.
-		self.speak_dialog('campo')
 		#Mycroft will repeat exactly what was said.
 		self.speak_dialog(utterance)
 
