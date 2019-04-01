@@ -1,5 +1,5 @@
 from adapt.intent import IntentBuilder
-from mycroft.skills.core import MycroftSkill, intent_handler
+from mycroft import MycroftSkill, intent_handler
 
 class CampoTest(MycroftSkill):
 
@@ -8,7 +8,7 @@ class CampoTest(MycroftSkill):
 	#that all the requirement for the function
 	#the requirement are the .voc documents needed
 	#if something is optional, there is the .optional() option
-	@intent_handler(IntentBuilder("").require("campo").build())
+	@intent_handler(IntentBuilder("").require("campo"))
 	def initialize(self, message):
 		#get the message which was says by the user
 		utterance = message.data.get['utterance']
@@ -16,6 +16,9 @@ class CampoTest(MycroftSkill):
 		self.speak_dialog('campo')
 		#Mycroft will repeat exactly what was said.
 		self.speak_dialog(utterance)
+
+	def stop(self):
+		pass
 
 def create_skill():
 	return CampoTest()
