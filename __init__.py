@@ -9,7 +9,7 @@ class CampoTest(MycroftSkill):
 	#that all the requirement for the function
 	#the requirement are the .voc documents needed
 	#if something is optional, there is the .optional() option
-	@intent_handler(IntentBuilder("").require("test.campo").build())
+	@intent_handler(IntentBuilder("").require("campo").build())
 	def initialize(self, message):
 		#get the message which was says by the user
 		utterance = message.data.get['utterance']
