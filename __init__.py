@@ -17,6 +17,6 @@ class CampoTest(MycroftSkill):
 		#Mycroft will repeat exactly what was said.
 		self.speak_dialog(utterance)
 
-def create_skills():
+def create_skill():
 	return CampoTest()
 
