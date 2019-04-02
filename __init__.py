@@ -34,8 +34,8 @@ class CampoSkill(MycroftSkill):
 		#We clear the text of the content of campo and 
 		#change the content of robot by Hi human, in the text 
 		repeat = re.sub(message.data['campo'], '', utterance)
-		modify_repeat = re.sub('^.*?' + message.data['other'], 'Hi human, ', utterance)
-		change_repeat = re.sub(message.data['other'], 'human', utterance)
+		modify_repeat = re.sub('^.*?' + message.data['other'], 'Hi human, ', repeat)
+		change_repeat = re.sub(message.data['other'], 'human', modify_repeat)
 		self.make_it_speak(change_repeat.strip())
 
 	#stop function
