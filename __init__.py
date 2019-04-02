@@ -12,7 +12,8 @@ class CampoSkill(MycroftSkill):
 		super(CampoSkill, self).__init__(name="CampoSkill")
 
 	
-
+	def make_it_speak(self, talk):
+		self.speak_dialog(talk)
 
 	#that all the requirement for the function
 	#the requirement are the .voc documents needed
@@ -24,17 +25,18 @@ class CampoSkill(MycroftSkill):
 		utterance = message.data.get('utterance')
 		#remove the occurance of the campo word in the message
 		repeat = re.sub('^.*?' + message.data['campo'], '', utterance)
-		self.speak_dialog(repeat.strip())
+		self.make_it_speak(repeat.strip())
 
 	#this intent only take place when the content of other AND campo are in input
 	@intent_handler(IntentBuilder("CampoOtherIntent").require("campo").require("other").build())
 	def handler_campo_other__intent(self, message):
 		utterance = message.data.get('utterance')
 		#We clear the text of the content of campo and 
-		#change the content ofmycroft by Hi human, in the text 
-		repeat = re.sub('^.*?' + message.data['campo'], '', utterance)
+		#change the content of robot by Hi human, in the text 
+		repeat = re.sub(message.data['campo'], '', utterance)
 		modify_repeat = re.sub('^.*?' + message.data['other'], 'Hi human, ', utterance)
-		self.speak_dialog(modify_repeat.strip())
+		change_repeat = re.sub(message.data['robot'], 'human', utterance)
+		self.make_it_speak(modify_repeat.strip())
 
 	#stop function
 	def stop(self):
@@ -43,4 +45,3 @@ class CampoSkill(MycroftSkill):
 #Creation of the skill.
 def create_skill():
 	return CampoSkill()
-
