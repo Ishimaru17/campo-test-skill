@@ -36,7 +36,7 @@ class CampoSkill(MycroftSkill):
 		repeat = re.sub(message.data['campo'], '', utterance)
 		modify_repeat = re.sub('^.*?' + message.data['other'], 'Hi human, ', utterance)
 		change_repeat = re.sub(message.data['other'], 'human', utterance)
-		self.make_it_speak(modify_repeat.strip())
+		self.make_it_speak(change_repeat.strip())
 
 	#stop function
 	def stop(self):
