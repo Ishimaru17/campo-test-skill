@@ -1,15 +1,15 @@
 ## Campo Test
-Test how skills works
+Parrot
 
 ## Description
-Test to see how the skills work and what we can do with it
+Repeat what's said after campo, but change the word robot
 
 ## Examples
- - "Test campo"
- - "Try campo"
+ - "campo"
+ - "campo robot"
 
 
 ## Credits
-Campo
+Campora
 
 
